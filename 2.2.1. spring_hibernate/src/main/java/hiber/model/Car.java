@@ -9,15 +9,16 @@ public class Car {
     @Id
     @Column(name = "car_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private int series;
-
     private String model;
 
     public Car() {
     }
 
-    public Car(String model) {
+    public Car(int series, String model) {
         this.model = model;
+        this.series = series;
     }
 
     public String getModel() {
@@ -34,6 +35,14 @@ public class Car {
 
     public void setSeries(int series) {
         this.series = series;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override
